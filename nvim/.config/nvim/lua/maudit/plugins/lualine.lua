@@ -10,10 +10,12 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = "ayu_dark",
+        theme = "pywal_theme",
+        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
       },
       sections = {
-        lualine_x = {
+        lualine_y = {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
@@ -23,10 +25,20 @@ return {
           { "fileformat" },
           { "filetype" },
         },
-        lualine_c = {
+        lualine_x = {
+          { "branch" },
+          { "searchcount" },
+        },
+        lualine_a = {
           { "macro_recording", "%S" },
           { "filename" },
           { "diagnostics" },
+        },
+        lualine_b = {
+          { "diff", symbols = { added = " ", modified = "柳", removed = " " } },
+        },
+        lualine_c = {
+          { "" },
         },
       },
     })
