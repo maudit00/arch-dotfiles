@@ -49,8 +49,13 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 -- Open Lazy
 keymap.set("n", "<leader>laz", "<cmd>Lazy <CR>", { desc = "Open Lazy" })
+-- Open Lazy
+keymap.set("n", "<leader>las", "<cmd>LiveServerStart <CR>", { desc = "Start Live Server" })
+keymap.set("n", "<leader>lat", "<cmd>LiveServerStop <CR>", { desc = "Stop Live Server" })
 --Line Wrapping Toggle
 keymap.set("n", "<leader>swt", "<cmd>lua vim.wo.wrap = not vim.wo.wrap<CR>", { desc = "Toggle line wrapping" })
+-- Open Messages
+keymap.set("n", "<leader>mm", "<cmd>mes<CR>", { desc = "Open Messages" })
 -- Copy all
 keymap.set("n", "<leader>ya", "<cmd>%y+<CR>", { desc = "Copy all text in the file" })
 -- Oil

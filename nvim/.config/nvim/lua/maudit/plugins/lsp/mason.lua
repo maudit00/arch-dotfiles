@@ -1,7 +1,7 @@
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   config = function()
@@ -30,14 +30,29 @@ return {
         "ts_ls",
         "html",
         "cssls",
-        "tailwindcss",
         "jdtls",
-        "svelte",
         "lua_ls",
-        "graphql",
         "emmet_ls",
-        "prismals",
-        "pyright",
+      },
+      -- THIS IS THE CRUCIAL PART YOU'RE MISSING:
+      handlers = {
+        -- This default handler will set up all installed LSPs
+        -- using their default lspconfig.nvim configurations.
+        function(server_name)
+          require("lspconfig")[server_name].setup({})
+        end,
+        -- You can add custom handlers for specific servers here
+        -- For example, for 'lua_ls' with specific settings:
+        ["lua_ls"] = function()
+          require("lspconfig").lua_ls.setup({
+            settings = {
+              Lua = { runtime = { version = "LuaJIT" } },
+              diagnostics = {
+                globals = { "vim" },
+              },
+            },
+          })
+        end,
       },
     })
 

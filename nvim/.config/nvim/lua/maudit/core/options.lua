@@ -1,4 +1,5 @@
 vim.cmd("let g:netrw_liststyle = 3")
+vim.cmd("autocmd FileType markdown setlocal ft=markdown")
 local opt = vim.opt
 opt.relativenumber = true
 opt.number = true

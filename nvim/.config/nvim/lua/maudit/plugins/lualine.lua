@@ -10,7 +10,7 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = "pywal-nvim",
+        theme = "ayu_dark",
       },
       sections = {
         lualine_x = {
