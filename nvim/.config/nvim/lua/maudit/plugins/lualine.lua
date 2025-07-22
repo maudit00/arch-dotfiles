@@ -10,7 +10,7 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
-        theme = "pywal_theme",
+        theme = "pywal",
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },
       },
