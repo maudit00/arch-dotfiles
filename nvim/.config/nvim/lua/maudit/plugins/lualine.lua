@@ -37,9 +37,6 @@ return {
         lualine_b = {
           { "diff", symbols = { added = " ", modified = "柳", removed = " " } },
         },
-        lualine_c = {
-          { "" },
-        },
       },
     })
   end,

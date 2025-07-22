@@ -202,8 +202,9 @@ bindsym $mod+r mode "resize"
 
 # Set italian keyboard layout
 exec --no-startup-id setxkbmap -layout us -variant intl
-exec --no-startup-id xrandr --output DP-0 --mode 1920x1080 --rate 165.00
+exec --no-startup-id xrandr --output DP-4 --mode 1920x1080 --rate 165.00
 exec --no-startup-id xset s off
+exec --no-startup-id xset r rate 250 40
 
 bindsym Scroll_Lock mode "play_game"
 
