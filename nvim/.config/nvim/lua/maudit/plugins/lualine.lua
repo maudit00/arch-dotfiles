@@ -31,7 +31,7 @@ return {
         },
         lualine_a = {
           { "macro_recording", "%S" },
-          { "filename" },
+          { "filename", path = 1 },
           { "diagnostics" },
         },
         lualine_b = {

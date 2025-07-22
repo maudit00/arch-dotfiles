@@ -63,7 +63,9 @@ bindsym $mod+q kill
 # change wallpaper
 bindsym $mod+p exec ~/.config/i3/pywal.sh 
 exec_always xrdb -merge ~/.Xresources
-
+exec_always setxkbmap -layout us -variant intl
+exec_always setxkbmap -layout us -variant intl
+exec_always xset r rate 250 40
 
 
 # start dmenu (a program launcher)
