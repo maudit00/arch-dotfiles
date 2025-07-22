@@ -120,8 +120,10 @@ alias c="clear"
 
 # Created by `pipx` on 2024-09-24 23:36:12
 export PATH="$PATH:/home/bruca/.local/bin"
+alias expa="sh ~/expall.sh"
+alias addlang="sed -i 's/<body/<body xml:lang=\"it\"/' *.html"
+alias zrm="find . -name \"*Zone.Identifier\" -type f -delete"
 alias c='clear'
-alias alac='sudo vim .config/alacritty/alacritty.toml'
 alias n='nvim'
 alias config='/usr/bin/git --git-dir=/home/bruca/.cfg/ --work-tree=/home/bruca'
 alias sedx="sed -i 's/^ *//g' index.html"
