@@ -1,5 +1,7 @@
 #!/bin/bash
 find ~/gruvbox-wallpapers -type f -name '*.jpg' -o -name '*.png' -print0 | shuf -zn1 | xargs -0 wal -i  
+# find ~/ -type f -name '*.jpg' -o -name '*.png' -print0 | shuf -zn1 | xargs -0 wal -i  
+# find ~/wallpapers/ -type f -name '*.gif' -print0 | shuf -zn1 | xargs -0 wal -i  
 # Generate new status.toml with last pywal color scheme
  /usr/bin/wal_i3rust -i ~/.cache/wal/colors.json -c ~/i3status-rust/config.toml
 # Replace lockscreen with used wallpaper

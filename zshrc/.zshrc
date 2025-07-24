@@ -122,6 +122,7 @@ alias c="clear"
 export PATH="$PATH:/home/bruca/.local/bin"
 alias expa="sh ~/expall.sh"
 alias addlang="sed -i 's/<body/<body xml:lang=\"it\"/' *.html"
+alias addlangen="sed -i 's/<body/<body xml:lang=\"en\"/' *.html"
 alias zrm="find . -name \"*Zone.Identifier\" -type f -delete"
 alias c='clear'
 alias n='nvim'
@@ -129,6 +130,7 @@ alias config='/usr/bin/git --git-dir=/home/bruca/.cfg/ --work-tree=/home/bruca'
 alias sedx="sed -i 's/^ *//g' index.html"
 alias mjmlx="mjml index.mjml -o index.html"
 alias mjmlw="mjml -w index.mjml -o index.html"
+alias fzmj="mjml -w \$(fzf) -o"
 alias sedmj="mjml index.mjml -o index.html && sed -i 's/^ *//g' index.html"
 alias zippa="zip -r zippo-h index.html img/ && zip -r zippo-m index.mjml img/"
 alias zshrc="nvim ~/.zshrc"
