@@ -278,16 +278,16 @@ bar {
     font pango:monofur for Powerlines 9, Font Awesome 7 Free 12
     position bottom
     status_command i3status-rs ~/i3status-rust/config.toml
-     colors{
-      separator $term-color8
-      background $term_background
-      statusline $term-color12
-      focused_workspace $term-color2 $term-color2 $term-color7
-      active_workspace #333333 #333333 #FFFFFF
-      inactive_workspace $term_background $term_background $term-color6
-      urgent_workspace $term-color3 $term-color9 $term-color15
-     }
-     }
+    colors {
+        separator $term_color8
+        background $term_background
+        statusline $term_color7 # Assuming you want a light color for the statusline text
+        focused_workspace $term_color2 $term_color2 $term_color7
+        active_workspace $term_color4 $term_color4 $term_color7
+        inactive_workspace $term_background $term_background $term_color6
+        urgent_workspace $term_color3 $term_color9 $term_color15 # You had these commented out already, good!
+    }
+    }
 
 
 # LockScreen shortcut
