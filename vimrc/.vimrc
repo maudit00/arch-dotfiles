@@ -117,7 +117,7 @@ nnoremap <leader>\ ``
 nnoremap <silent> <leader>p :%w !lp<CR>
 
 " Type jj to exit insert mode quickly.
-inoremap jj <Esc>
+inoremap jk <Esc>
 
 " Press the space bar to type the : character in command mode.
 nnoremap <leader>sa :wqa!<CR>
@@ -246,3 +246,7 @@ set laststatus=2
 
 " }}}
 "
+"clipobard settings
+set clipboard+=unnamed
+set paste
+set go+=a

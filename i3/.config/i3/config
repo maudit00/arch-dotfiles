@@ -33,6 +33,7 @@ font pango: Monofur for Powerlines 16
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id picom &
+exec --no-startup-id /bin/oomox_update.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a des/ktop environment-independent system tray GUI for it.
@@ -62,7 +63,7 @@ bindsym $mod+shift+Return exec pavucontrol
 # kill focused window
 bindsym $mod+q kill
 # change wallpaper
-bindsym $mod+p exec ~/.config/i3/pywal.sh 
+bindsym $mod+p exec ~/.config/i3/pywal.sh && oomox-cli -o oomox-xresources-reverse -t ~/.themes /opt/oomox/scripted_colors/xresources/xresources-reverse 
 exec_always xrdb -merge ~/.Xresources
 exec_always setxkbmap -layout us -variant intl
 exec_always setxkbmap -layout us -variant intl
@@ -171,9 +172,9 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r restart && killall -HUP xsettingsd
 # exit i3 (logs you out of your X session)
 
 # resize window (you can also use the mouse for that)
@@ -274,16 +275,16 @@ bindsym --release Mod4+Shift+s exec --no-startup-id maim -s | flameshot gui
 
 
 bar {
-    font pango:Monofur for Powerlines 9, FontAwesome 6 free 12
+    font pango:monofur for Powerlines 9, Font Awesome 7 Free 12
     position bottom
     status_command i3status-rs ~/i3status-rust/config.toml
      colors{
       separator $term-color8
       background $term_background
       statusline $term-color12
-      focused_workspace $term-color4 $term-color4 $term-color7
-      active_workspace $term_color8 $term_color8 $term-color7
-      inactive_workspace $term_background8 $term_background8 $term-color6
+      focused_workspace $term-color2 $term-color2 $term-color7
+      active_workspace #333333 #333333 #FFFFFF
+      inactive_workspace $term_background $term_background $term-color6
       urgent_workspace $term-color3 $term-color9 $term-color15
      }
      }
