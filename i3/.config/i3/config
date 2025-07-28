@@ -241,11 +241,18 @@ set_from_resource $fg color0
 set_from_resource $bg color8
 
 # class                 border  backgr. text indicator child_border
-client.focused          $term_color0  $term_color0  $term_color3  $term_color0  $term_color0
-client.focused.inactive $term_color1  $term_color1  $term_color2  $term_color1  $term_color1
-client.unfocused        $term_color9  $term_color9  $fg  $term_color9  $term_color9
-client.urgent           $term_color12 $term_color12 $term_color12  $term_color12  $term_color12  
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+# client.focused          $term_color3  $term_color3  $term_color3  $term_color3  $term_color3
+# client.focused.inactive $term_color1  $term_color1  $term_color2  $term_color1  $term_color1
+# client.unfocused        $term_color9  $term_color9  $fg  $term_color9  $term_color9
+# client.urgent           $term_color12 $term_color12 $term_color12  $term_color12  $term_color12  
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
+# Colors for window borders and title bars
+# class                  border            backgr.            text                 indicator          child_border
+client.focused           $term_color3      $term_color3       $term_foreground     $term_color3       $term_color3
+client.focused_inactive  $term_color8      $term_color8       $term_color7         $term_color8       $term_color8
+client.unfocused         $term_background  $term_background   $term_color7         $term_background   $term_background
+client.urgent            $term_color10      $term_color10       $term_color15        $term_color10       $term_color10
+client.placeholder       $term_background  $term_background   $term_foreground     $term_background   $term_background
 
 
 # Set window borders to plain borders
