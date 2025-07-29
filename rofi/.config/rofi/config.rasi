@@ -2,7 +2,7 @@
 
 configuration {
 	modes: "window,drun,run,ssh";
-	font: "Monofur 12";
+	font: "MesloLGS NF 12";
 	location: 2;
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
