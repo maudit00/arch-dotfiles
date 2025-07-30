@@ -5,7 +5,24 @@ return {
   ---@type snacks.Config
   opts = {
     bigfile = { enabled = true },
-    dashboard = { enabled = true },
+    dashboard = {
+      enabled = true,
+      preset = {
+        header = [[
+      ++++++++      
+   +++++++-++++++   
+  +++++++  +++++++  
+ +++++++    +++++++ 
++++++++      +++++++
+++++++   ++   ++++++
++++++   -+++  ++++++
+ +++  ++++++++  +++ 
+  ++++++++++++++++  
+   ++++++++++++++   
+      ++++++++      
+]],
+      },
+    },
     explorer = { enabled = true },
     indent = { enabled = true },
     input = { enabled = true },
@@ -333,6 +350,18 @@ return {
         Snacks.picker.colorschemes()
       end,
       desc = "Colorschemes",
+    },
+    -- Delete Scratch
+    ["delete"] = {
+      "<a-x>",
+      function(self)
+        vim.api.nvim_win_call(self.win, function()
+          vim.cmd([[close]])
+          os.remove(vim.api.nvim_buf_get_name(self.buf))
+        end)
+      end,
+      desc = "Delete buffer",
+      mode = { "n", "x" },
     },
     -- LSP
     {

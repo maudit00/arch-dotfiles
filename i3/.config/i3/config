@@ -282,7 +282,7 @@ bindsym --release Mod4+Shift+s exec --no-startup-id maim -s | flameshot gui
 
 
 bar {
-    font pango:monofur for Powerlines 9, Font Awesome 7 Free 12
+    font pango:MesloLGSDZ Nerd Font 9, Font Awesome 7 Free 12
     position bottom
     status_command i3status-rs ~/i3status-rust/config.toml
     colors {

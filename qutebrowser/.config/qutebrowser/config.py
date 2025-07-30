@@ -1,5 +1,5 @@
 config.load_autoconfig()
-c.tabs.padding = {'top': 5, 'bottom': 5, 'left': 5, 'right': 5}
+c.tabs.padding = {"top": 5, "bottom": 5, "left": 5, "right": 5}
 
 # --- General Font Settings for Qutebrowser UI (Optional) ---
 # If you want Monofur for UI elements, be careful with the 'size' part
@@ -28,10 +28,12 @@ c.fonts.web.family.serif = "Noto Serif, Noto Color Emoji, Noto Sans CJK JP"
 c.fonts.web.family.fixed = "Monofur, Noto Sans Mono, Noto Color Emoji, Noto Sans CJK JP"
 
 # Cursive font
-c.fonts.web.family.cursive = "Comic Sans MS, Noto Color Emoji" # Or a relevant cursive font
+c.fonts.web.family.cursive = (
+    "Comic Sans MS, Noto Color Emoji"  # Or a relevant cursive font
+)
 
 # Fantasy font
-c.fonts.web.family.fantasy = "Impact, Noto Color Emoji" # Or a relevant fantasy font
+c.fonts.web.family.fantasy = "Impact, Noto Color Emoji"  # Or a relevant fantasy font
 
 # You might also have a `c.fonts.web.family.standard` in older versions
 # This often acts as a general fallback for the "standard" font on a page.

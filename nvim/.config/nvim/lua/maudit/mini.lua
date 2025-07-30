@@ -31,9 +31,6 @@ end)
 later(function()
   require("mini.move").setup()
 end)
-later(function()
-  require("mini.jump").setup()
-end)
 
 now(function()
   -- Use other plugins with `add()`. It ensures plugin is available in current

@@ -6,14 +6,8 @@
 
 config_version: 2
 settings:
-  bindings.commands:
-    global:
-      normal:
-        e: download-open
-  content.blocking.enabled:
-    global: false
   content.javascript.clipboard:
-    global: access
-  content.register_protocol_handler:
-    https://mail.google.com?extsrc=mailto&url=%25s: true
-    https://outlook.office.com?mailtouri=%25s: true
+    https://charlie-cleans-code.lovable.app: access-paste
+    https://www.figma.com: access-paste
+  qt.force_software_rendering:
+    global: software-opengl
