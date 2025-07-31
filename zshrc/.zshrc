@@ -5,6 +5,7 @@
 (cat ~/.cache/wal/sequences &)
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
+export QUTE_QT_WRAPPER=PyQt6
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -123,6 +124,7 @@ export PATH="$PATH:/home/bruca/.local/bin"
 alias expa="sh ~/expall.sh"
 alias addlang="sed -i 's/<body/<body xml:lang=\"it\"/' *.html"
 alias addlangen="sed -i 's/<body/<body xml:lang=\"en\"/' *.html"
+alias addscripteni= /usr/bin/add-script-eni.sh
 alias zrm="find . -name \"*Zone.Identifier\" -type f -delete"
 alias c='clear'
 alias n='nvim'

@@ -9,5 +9,7 @@ settings:
   content.javascript.clipboard:
     https://charlie-cleans-code.lovable.app: access-paste
     https://www.figma.com: access-paste
+  content.webgl:
+    global: true
   qt.force_software_rendering:
     global: software-opengl
