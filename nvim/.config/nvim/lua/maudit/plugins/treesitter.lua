@@ -9,7 +9,7 @@ return {
     -- import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
 
-    -- configure treesitter
+    -- configure treesitte
     treesitter.setup({
       auto_install = true,
       ignore_install = { "" },
@@ -17,6 +17,7 @@ return {
       sync_install = false,
       highlight = {
         enable = true,
+        additional_vim_regex_highlighting = false,
       },
       -- enable indentation
       indent = { enable = true },

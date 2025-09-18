@@ -9,6 +9,9 @@
 "               
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               
 
+set clipboard+=unnamed
+set paste
+set go+=a
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 " Enable type file detection. Vim will be able to try to detect the type of file is use.
@@ -246,7 +249,3 @@ set laststatus=2
 
 " }}}
 "
-"clipobard settings
-set clipboard+=unnamed
-set paste
-set go+=a

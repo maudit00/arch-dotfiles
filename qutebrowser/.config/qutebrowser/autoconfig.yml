@@ -8,7 +8,10 @@ config_version: 2
 settings:
   content.javascript.clipboard:
     https://charlie-cleans-code.lovable.app: access-paste
+    https://duckduckgo.com: access-paste
     https://www.figma.com: access-paste
+  content.notifications.enabled:
+    https://www.youtube.com: true
   content.webgl:
     global: true
   qt.force_software_rendering:

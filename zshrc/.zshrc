@@ -21,7 +21,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="cloud"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -149,6 +149,7 @@ alias kcfg='sudo vim ~/.config/kitty/kitty.conf'
 alias hcfg='sudo vim ~/.config/hypr/hyprland.conf'
 alias wcfg=' nvim ~/.config/waybar/' 
 alias sedll="sed -i 's/^ *//g' *.html" 
+alias sedall='for file in $(find . -type f -name "*.html"); do sed -i "s/^ *//g" "$file"; done'
 alias ls='ls -lah' 
 
 # Created by `pipx` on 2024-10-28 12:36:49

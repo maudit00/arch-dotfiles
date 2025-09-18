@@ -14,8 +14,8 @@ opt.ruler = true
 -- search settings
 opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
-opt.cursorline = true
-opt.cursorcolumn = true
+opt.cursorline = false
+opt.cursorcolumn = false
 -- turn on termguicolors for tokyonight colorscheme to work
 -- (have to use iterm2 or any other true color terminal)
 opt.termguicolors = true
@@ -34,3 +34,4 @@ opt.backup = false
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.sidescrolloff = 8
+opt.synmaxcol = 400
