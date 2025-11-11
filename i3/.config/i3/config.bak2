@@ -64,8 +64,7 @@ bindsym $mod+shift+Return exec pavucontrol
 bindsym $mod+q kill
 # change wallpaper
 bindsym $mod+p exec ~/.config/i3/pywal.sh && oomox-cli -o oomox-xresources-reverse -t ~/.themes /opt/oomox/scripted_colors/xresources/xresources-reverse 
-# Colori generati da wal
-include ~/.config/i3/wal_colors.conf
+exec_always xrdb -merge ~/.Xresources
 exec_always setxkbmap -layout us -variant intl
 exec_always setxkbmap -layout us -variant intl
 exec_always xset r rate 250 40

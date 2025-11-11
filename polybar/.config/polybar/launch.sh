@@ -1,7 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
+# Aggiorna i colori da wal
+~/.config/polybar/wal_colors.sh
+
+# Uccidi eventuali barre esistenti
 killall -q polybar
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-while pgrep -x polybar >/dev/null; do sleep 1; done
-
-polybar mybar -c ~/.config/polybar/config.ini
+# Lancia le barre
+polybar dp4 &
+polybar hdmi0 &
