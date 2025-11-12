@@ -11,7 +11,7 @@ export QUTE_QT_WRAPPER=PyQt6
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 
 
 # Path to your Oh My Zsh installation.
@@ -21,7 +21,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="cloud"
+ZSH_THEME="amuse"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
