@@ -105,6 +105,7 @@ source <(fzf --zsh)
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 alias i3c="nvim ~/.config/i3/config"
+alias polyc="nvim ~/.config/polybar/config.ini"
 alias c="clear"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
