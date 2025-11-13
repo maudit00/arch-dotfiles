@@ -14,8 +14,8 @@ return {
       config = function()
         require("luasnip.loaders.from_vscode").lazy_load()
         require("luasnip.loaders.from_lua").load({
-          paths = { "~/dotfiles/nvim/.config/nvim/lua/maudit/plugins/snippets/" },
-          { "~/dotfiles/nvim/.config/nvim/lua/maudit/plugins/snippets/mjml/" },
+          paths = { "~/arch-dotfiles/nvim/.config/nvim/lua/maudit/plugins/snippets/" },
+          { "~/arch-dotfiles/nvim/.config/nvim/lua/maudit/plugins/snippets/mjml/" },
         })
       end,
     },

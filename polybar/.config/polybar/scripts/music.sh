@@ -16,7 +16,7 @@ if [ -z "$artist" ] || [ -z "$title" ]; then
     echo "No music"
 else
     if [ "$status" = "Playing" ]; then
-        icon="奈"
+        icon="▶︎"
     elif [ "$status" = "Paused" ]; then
         icon=""
     else

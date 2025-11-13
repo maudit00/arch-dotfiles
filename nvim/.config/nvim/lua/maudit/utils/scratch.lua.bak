@@ -1,6 +1,5 @@
 local M = {}
 
--- 🔹 genera un UUID per i nuovi scratch buffer
 local function generate_uuid()
   local random = math.random
   local template = "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
@@ -10,26 +9,22 @@ local function generate_uuid()
   end)
 end
 
--- 🔹 mantiene le larghezze massime per ogni colonna
 local column_widths = { 0, 0, 0, 0 }
 
 local function update_column_widths(item)
-  column_widths[1] = math.max(column_widths[1], vim.api.nvim_strwidth(item.cwd or ""))
-  column_widths[2] = math.max(column_widths[2], vim.api.nvim_strwidth(item.icon or ""))
-  column_widths[3] = math.max(column_widths[3], vim.api.nvim_strwidth(item.name or ""))
-  column_widths[4] = math.max(column_widths[4], vim.api.nvim_strwidth(item.branch or ""))
+  column_widths[1] = math.max(column_widths[1], vim.api.nvim_strwidth(item.cwd))
+  column_widths[2] = math.max(column_widths[2], vim.api.nvim_strwidth(item.icon))
+  column_widths[3] = math.max(column_widths[3], vim.api.nvim_strwidth(item.name))
+  column_widths[4] = math.max(column_widths[4], vim.api.nvim_strwidth(item.branch))
 end
 
--- 🔹 prepara ogni item per il picker
 local function process_item(item)
   item._path = item.file
   item.branch = item.branch and ("branch:%s"):format(item.branch) or ""
-  item.cwd = item.cwd and vim.fn.fnamemodify(item.cwd, ":p:~")
-    or (item.dir and vim.fn.fnamemodify(item.dir, ":p:~"))
-    or ""
-  item.icon = item.icon or Snacks.util.icon(item.ft, "filetype") or ""
+  item.cwd = item.cwd and vim.fn.fnamemodify(item.cwd, ":p:~") or ""
+  item.icon = item.icon or Snacks.util.icon(item.ft, "filetype")
   item.preview = { text = item.file }
-  item.name = item.name or vim.fn.fnamemodify(item.file or "scratch", ":t")
+  item.name = "Scratch"
   update_column_widths(item)
 end
 
@@ -39,26 +34,16 @@ local function process_items(items)
   end
 end
 
--- 🔹 formato testuale per il picker
 local function format_item_text(item)
-  local cwd = item.cwd or ""
-  local icon = item.icon or ""
-  local name = item.name or ""
-  local branch = item.branch or ""
-
-  local parts = { cwd, icon, name, branch }
-
+  local parts = { item.cwd, item.icon, item.name, item.branch }
   for i, part in ipairs(parts) do
-    part = tostring(part)
-    parts[i] = part .. string.rep(" ", math.max(0, column_widths[i] - vim.api.nvim_strwidth(part)))
+    parts[i] = part .. string.rep(" ", column_widths[i] - vim.api.nvim_strwidth(part))
   end
-
   return table.concat(parts, " ")
 end
 
--- 🔹 seleziona uno scratch esistente
 function M.select_scratch()
-  local items = Snacks.scratch.list() or {}
+  local items = Snacks.scratch.list()
   process_items(items)
 
   Snacks.picker.pick({
@@ -76,6 +61,7 @@ function M.select_scratch()
     end,
     transform = function(item)
       item.text = format_item_text(item)
+      print(vim.inspect(item))
     end,
     win = {
       input = {
@@ -87,11 +73,12 @@ function M.select_scratch()
     actions = {
       delete = function(picker, item)
         for _, entry in ipairs(items) do
-          if entry.file == item.file then
+          if entry.cwd == item.cwd then
             os.remove(item.file)
           end
         end
         picker:close()
+
         vim.schedule(function()
           M.select_scratch()
         end)
@@ -111,7 +98,6 @@ function M.select_scratch()
   })
 end
 
--- 🔹 crea un nuovo scratch buffer
 function M.new_scratch(filetypes)
   Snacks.picker.pick({
     source = "scratch",

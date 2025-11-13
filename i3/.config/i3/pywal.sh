@@ -6,6 +6,7 @@
 # Scegli un wallpaper casuale
 wallpaper=$(find ~/wallpapers/ \( -name '*.jpg' -o -name '*.png' -o -name '.jpeg' \) -type f | shuf -n1)
 wal -i "$wallpaper"
+walcord
 
 # Aggiorna lockscreen ridimensionato
 convert "$wallpaper" -resize 1920x1080 ~/wallpapers/lockscreen.png
