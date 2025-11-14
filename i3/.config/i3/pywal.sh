@@ -4,7 +4,7 @@
 # =========================================
 
 # Scegli un wallpaper casuale
-wallpaper=$(find ~/wallpapers/ \( -name '*.jpg' -o -name '*.png' -o -name '.jpeg' \) -type f | shuf -n1)
+wallpaper=$(find ~/demon-slayer-wallpapers/ \( -name '*.jpg' -o -name '*.png' -o -name '.jpeg' \) -type f | shuf -n1)
 wal -i "$wallpaper"
 walcord
 
