@@ -35,7 +35,7 @@ keymap.set("n", "<leader>bd", "<cmd>:bd<CR>", { desc = "Close Buffer" })
 -- utiliti
 keymap.set("n", "<leader>sa", "<cmd>wa<CR>", { desc = "Save all files" })
 keymap.set("n", "<S-Q>", "<cmd>q!<CR>", { desc = "quit all files" })
-keymap.set("n", "<S-W>", "<cmd>w !sudo tee % >/dev/null<CR>", { desc = "save protected files" })
+keymap.set("n", "<leader>W", "<cmd>w !sudo tee % >/dev/null<CR>", { desc = "Save protected file" })
 keymap.set("n", "<leader>src", "<cmd>so<CR>", { desc = "Re Source this file" })
 -- window management
 keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })

@@ -152,6 +152,7 @@ alias wcfg=' nvim ~/.config/waybar/'
 alias sedll="sed -i 's/^ *//g' *.html" 
 alias sedall='for file in $(find . -type f -name "*.html"); do sed -i "s/^ *//g" "$file"; done'
 # alias ls='ls -lah' 
+#
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Created by `pipx` on 2024-10-28 12:36:49
 export PATH="$PATH:/home/brucadesk/.local/bin"
