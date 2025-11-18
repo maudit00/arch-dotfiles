@@ -1,6 +1,13 @@
 vim.g.mapleader = " "
 local keymap = vim.keymap -- for conciseness
 
+keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move down" })
+keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move up" })
+keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+keymap.set("v", "<", "<gv", { desc = "Move selection left" })
+keymap.set("v", ">", ">gv", { desc = "Move selection right" })
+
 keymap.set("n", "<leader>tu", "<cmd>colorscheme pywal<CR>", { desc = "Update colorscheme" })
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
