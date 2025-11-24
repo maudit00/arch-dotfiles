@@ -30,13 +30,13 @@ font pango:JetBrainsMono Nerd Font Mono 12
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-exec --no-startup-id picom &
-exec --no-startup-id /bin/oomox_update.sh
+exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec_always --no-startup-id picom &
+exec_always --no-startup-id /bin/oomox_update.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a des/ktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -63,20 +63,22 @@ bindsym $mod+shift+Return exec pavucontrol
 bindsym $mod+q kill
 # change wallpaper
 bindsym $mod+p exec --no-startup-id ~/.config/i3/pywal.sh && \
-    oomox-cli -o oomox-xresources-reverse -t ~/.themes /opt/oomox/scripted_colors/xresources/xresources-reverse && \
-    oomox-cli -i "numix" -o oomox-xresources-reverse -t ~/.icons /opt/oomox/scripted_colors/xresources/xresources-reverse && \
-    ~/.config/i3/oomox_refresh_icons.sh
-# bindsym $mod+p exec ~/.config/i3/pywal.sh && oomox-cli -o oomox-xresources-reverse -t ~/.themes /opt/oomox/scripted_colors/xresources/xresources-reverse 
+oomox-cli -o oomox-xresources-reverse -t ~/.themes /opt/oomox/scripted_colors/xresources/xresources-reverse && \
+oomox-cli -i "numix" -o oomox-xresources-reverse -t ~/.icons /opt/oomox/scripted_colors/xresources/xresources-reverse && \
+~/.config/i3/oomox_refresh_icons.sh
+# bindsym $mod+p exec ~/.config/i3/pywal.sh && oomox-cli -o oomox-xresources-reverse -t ~/.themes /opt/oomox/scripted_colors/xresources/xresources-reverse
 # Colori generati da wal
 include ~/.config/i3/wal_colors.conf
-exec_always setxkbmap -layout us -variant intl
-exec_always xset r rate 250 40
+exec_always --no-startup-id xset r rate 240 40
+exec_always --no-startup-id setxkbmap us -variant intl
+exec_always --no-startup-id sunshine
+exec_always --no-startup-id xset s off
 
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id ~/.config/polybar/mybar/scripts/launcher.sh
 # A more modern dmenu replacement is rofi:
- bindcode $mod+40 exec ~/.config/rofi/launchers/type-1/launcher.sh
+bindcode $mod+40 exec ~/.config/rofi/launchers/type-1/launcher.sh
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -175,48 +177,45 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload 
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart && killall -HUP xsettingsd
 # exit i3 (logs you out of your X session)
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+bindsym j resize shrink width 10 px or 10 ppt
+bindsym k resize grow height 10 px or 10 ppt
+bindsym l resize shrink height 10 px or 10 ppt
+bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+bindsym Left resize shrink width 10 px or 10 ppt
+bindsym Down resize grow height 10 px or 10 ppt
+bindsym Up resize shrink height 10 px or 10 ppt
+bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+# back to normal: Enter or Escape or $mod+r
+bindsym Return mode "default"
+bindsym Escape mode "default"
+bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 # Set italian keyboard layout
-exec --no-startup-id setxkbmap -layout us -variant intl
-exec --no-startup-id xrandr --output DP-4 --mode 1920x1080 --rate 165.00
-exec --no-startup-id xset s off
-exec --no-startup-id xset r rate 250 40
+exec_always --no-startup-id xrandr --output DP-4 --mode 1920x1080 --rate 165.00
 
 bindsym Scroll_Lock mode "play_game"
 
 mode "play_game" {
-        bindsym Scroll_Lock mode "default"
+bindsym Scroll_Lock mode "default"
 }
 
 # Set background to black
@@ -247,7 +246,7 @@ set_from_resource $bg color8
 # client.focused          $term_color3  $term_color3  $term_color3  $term_color3  $term_color3
 # client.focused.inactive $term_color1  $term_color1  $term_color2  $term_color1  $term_color1
 # client.unfocused        $term_color9  $term_color9  $fg  $term_color9  $term_color9
-# client.urgent           $term_color12 $term_color12 $term_color12  $term_color12  $term_color12  
+# client.urgent           $term_color12 $term_color12 $term_color12  $term_color12  $term_color12
 # client.placeholder      $bg     $bg     $fg  $bg       $bg
 # Colors for window borders and title bars
 # class                  border            backgr.            text                 indicator          child_border
@@ -272,12 +271,12 @@ gaps outer 10
 focus_follows_mouse yes
 
 # Start picom
- exec_always --no-startup-id picom
+exec_always --no-startup-id picom
 
 # Bind file manager to Ctrl+Alt+e
 
 # Start dunst
-exec --no-startup-id dunst
+exec_always --no-startup-id dunst
 
 # Screenshot on Win+Shift+s
 bindsym --release Mod4+Shift+s exec --no-startup-id maim -s | flameshot gui
@@ -304,5 +303,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bindsym $MOD+SHIFT+x exec i3lock --color=000000 -i ~/gruvbox-wallpapers/wallpapers/minimalistic/gnu.jpg
 
 # dmenu shortcut to use colors
-  # bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
-
+# bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"

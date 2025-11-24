@@ -6,11 +6,11 @@
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 export QUTE_QT_WRAPPER=PyQt6
-
+export XDG_DATA_DIRS="$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/brucaliffo/.local/share/flatpak/exports/share"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
 # source $HOME/.cargo/env
 
 
@@ -96,17 +96,18 @@ source <(fzf --zsh)
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
- #if [[ -n $SSH_CONNECTION ]]; then
-  # export EDITOR='vim'
- #else
-  # export EDITOR='nvim'
- #fi
+#if [[ -n $SSH_CONNECTION ]]; then
+# export EDITOR='vim'
+#else
+# export EDITOR='nvim'
+#fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 alias i3c="nvim ~/.config/i3/config"
 alias polyc="nvim ~/.config/polybar/config.ini"
 alias c="clear"
+alias pluto='mpv https://raw.githubusercontent.com/Brenders/Pluto-TV-Italia-M3U/main/PlutoItaly.m3u'
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -140,19 +141,19 @@ alias zshrc="nvim ~/.zshrc"
 alias docu="/mnt/c/Users/ddamario/OneDrive\ -\ Jakala\ SpA\/Documenti/"
 alias down="/mnt/c/Users/ddamario/Downloads"
 eval "$(zoxide init zsh)"
-alias alac='vim ~/.config/alacritty/alacritty.toml' 
-alias syu='sudo pacman -Syu' 
-alias sy='sudo pacman -Sy' 
-alias ss='sudo pacman -Ss' 
-alias rs='sudo pacman -Rs' 
-alias rsnc='sudo pacman -Rsnc' 
+alias alac='vim ~/.config/alacritty/alacritty.toml'
+alias syu='sudo pacman -Syu'
+alias sy='sudo pacman -Sy'
+alias ss='sudo pacman -Ss'
+alias rs='sudo pacman -Rs'
+alias rsnc='sudo pacman -Rsnc'
 alias kcfg='sudo vim ~/.config/kitty/kitty.conf'
 alias hcfg='sudo vim ~/.config/hypr/hyprland.conf'
-alias wcfg=' nvim ~/.config/waybar/' 
-alias sedll="sed -i 's/^ *//g' *.html" 
+alias wcfg=' nvim ~/.config/waybar/'
+alias sedll="sed -i 's/^ *//g' *.html"
 alias sedall='for file in $(find . -type f -name "*.html"); do sed -i "s/^ *//g" "$file"; done'
-# alias ls='ls -lah' 
+# alias ls='ls -lah'
 #
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Created by `pipx` on 2024-10-28 12:36:49
 export PATH="$PATH:/home/brucadesk/.local/bin"
+export EDITOR=nvim

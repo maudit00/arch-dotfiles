@@ -10,7 +10,6 @@ opt.shiftwidth = 2 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.wrap = false
-opt.signcolumn = "yes"
 opt.ruler = true
 -- search settings
 opt.ignorecase = true -- ignore case when searching
@@ -51,6 +50,16 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = group,
   pattern = "*",
   command = [[%s/\s\+$//e]],
+})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = group,
+  pattern = "*",
+  command = [[%s/\n\+\%$//e]],
+})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  group = group,
+  pattern = "*",
+  command = [[%s/^\s\+//e]],
 })
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = group,
