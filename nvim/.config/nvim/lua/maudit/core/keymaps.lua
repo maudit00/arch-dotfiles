@@ -11,6 +11,14 @@ keymap.set("v", ">", ">gv", { desc = "Move selection right" })
 keymap.set("n", "<leader>tu", "<cmd>colorscheme pywal<CR>", { desc = "Update colorscheme" })
 keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "<leader>xo", function()
+  -- 1. Oil, naviga alla cartella genitore
+  vim.cmd("Oil")
+  vim.cmd("normal! -")
+  -- 2. Esegue xdg-open (o un comando equivalente) sulla directory di lavoro attuale (cwd)
+  -- Questa è la cartella genitore in cui Oil ti ha portato
+  vim.fn.system({ "xdg-open", vim.fn.getcwd() })
+end, { desc = "Apri la cartella genitore in esterno", silent = true })
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })

@@ -35,7 +35,7 @@ return {
           { "diagnostics" },
         },
         lualine_b = {
-          { "diff", symbols = { added = " ", modified = "柳", removed = " " } },
+          { "diff", symbols = { added = " ", modified = "", removed = " " } },
         },
       },
     })

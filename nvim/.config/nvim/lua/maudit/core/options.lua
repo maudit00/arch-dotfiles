@@ -46,21 +46,21 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
   command = "silent! lua vim.highlight.on_yank()",
 })
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = group,
-  pattern = "*",
-  command = [[%s/\s\+$//e]],
-})
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = group,
-  pattern = "*",
-  command = [[%s/\n\+\%$//e]],
-})
-vim.api.nvim_create_autocmd("BufWritePre", {
-  group = group,
-  pattern = "*",
-  command = [[%s/^\s\+//e]],
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   group = group,
+--   pattern = "*",
+--   command = [[%s/\s\+$//e]],
+-- })
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   group = group,
+--   pattern = "*",
+--   command = [[%s/\n\+\%$//e]],
+-- })
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   group = group,
+--   pattern = "*",
+--   command = [[%s/^\s\+//e]],
+-- })
 vim.api.nvim_create_autocmd("BufReadPost", {
   group = group,
   callback = function()
