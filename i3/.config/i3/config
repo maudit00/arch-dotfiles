@@ -32,6 +32,7 @@ font pango:JetBrainsMono Nerd Font Mono 12
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id picom &
+exec_always --no-startup-id nvidia-settings --load-config-only
 exec_always --no-startup-id /bin/oomox_update.sh
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
@@ -264,8 +265,8 @@ for_window [class="^.*"] border pixel 5
 for_window [class="Steam.*"] floating enable
 
 # Set gaps
-gaps inner 10
-gaps outer 10
+gaps inner 8
+gaps outer 8
 
 # Disable focus on mouse hover
 focus_follows_mouse yes

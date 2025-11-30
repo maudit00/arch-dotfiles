@@ -157,3 +157,4 @@ alias sedall='for file in $(find . -type f -name "*.html"); do sed -i "s/^ *//g"
 # Created by `pipx` on 2024-10-28 12:36:49
 export PATH="$PATH:/home/brucadesk/.local/bin"
 export EDITOR=nvim
+echo -ne '\e[4 q'
