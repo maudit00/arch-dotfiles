@@ -32,6 +32,7 @@ font pango:JetBrainsMono Nerd Font Mono 12
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec_always --no-startup-id picom &
+exec_always --no-startup-id bluman-applet &
 exec_always --no-startup-id nvidia-settings --load-config-only
 exec_always --no-startup-id /bin/oomox_update.sh
 

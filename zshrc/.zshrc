@@ -150,6 +150,7 @@ alias rsnc='sudo pacman -Rsnc'
 alias kcfg='sudo vim ~/.config/kitty/kitty.conf'
 alias hcfg='sudo vim ~/.config/hypr/hyprland.conf'
 alias wcfg=' nvim ~/.config/waybar/'
+alias open='xdg-open .'
 alias sedll="sed -i 's/^ *//g' *.html"
 alias sedall='for file in $(find . -type f -name "*.html"); do sed -i "s/^ *//g" "$file"; done'
 # alias ls='ls -lah'
