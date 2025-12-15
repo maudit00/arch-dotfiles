@@ -12,6 +12,13 @@ return {
       "size",
       "mtime",
     },
+    view_options = {
+      show_hidden = true,
+      sort = {
+        { "type", "asc" },
+        { "mtime", "desc" },
+      },
+    },
     skip_confirm_for_simple_edits = true,
     lsp_file_methods = {
       enabled = true,

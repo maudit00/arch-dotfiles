@@ -83,7 +83,7 @@ ZSH_THEME="kphoen"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh-bat git fzf  zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-vi-mode)
+plugins=(zsh-bat git fzf fzf-tab zsh-autosuggestions zsh-syntax-highlighting you-should-use zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 # Set up fzf key bindings and fuzzy completion
@@ -107,6 +107,7 @@ source <(fzf --zsh)
 alias i3c="nvim ~/.config/i3/config"
 alias polyc="nvim ~/.config/polybar/config.ini"
 alias c="clear"
+alias virtuacam="sudo modprobe v4l2loopback exclusive_caps=1 card_label='OBS Cam, Converter Cam'"
 alias pluto='mpv https://raw.githubusercontent.com/Brenders/Pluto-TV-Italia-M3U/main/PlutoItaly.m3u'
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,

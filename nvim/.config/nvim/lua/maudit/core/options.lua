@@ -77,3 +77,15 @@ vim.api.nvim_create_autocmd("VimResized", {
     vim.cmd("tabdo wincmd =")
   end,
 })
+
+vim.api.nvim_create_user_command("AddTargetBlank", function()
+  vim.cmd([[%s/\(<a\s\+[^>]*href="[^"]*"\)\([^>]*target="_blank"[^>]*>\)\@!/\1 target="_blank"/gc]])
+end, {
+  desc = 'Aggiunge target="_blank" ai link senza l\'attributo.',
+})
+vim.keymap.set(
+  "n",
+  "<leader>bb",
+  ":AddTargetBlank<CR>",
+  { noremap = true, silent = true, desc = "Esegui AddTargetBlank" }
+)
