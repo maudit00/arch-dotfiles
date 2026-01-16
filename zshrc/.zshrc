@@ -107,6 +107,7 @@ source <(fzf --zsh)
 alias i3c="nvim ~/.config/i3/config"
 alias polyc="nvim ~/.config/polybar/config.ini"
 alias c="clear"
+alias server="z lavoro && live-server"
 alias virtuacam="sudo modprobe v4l2loopback exclusive_caps=1 card_label='OBS Cam, Converter Cam'"
 alias pluto='mpv https://raw.githubusercontent.com/Brenders/Pluto-TV-Italia-M3U/main/PlutoItaly.m3u'
 

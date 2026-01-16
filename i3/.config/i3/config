@@ -73,7 +73,6 @@ oomox-cli -i "numix" -o oomox-xresources-reverse -t ~/.icons /opt/oomox/scripted
 include ~/.config/i3/wal_colors.conf
 exec_always --no-startup-id xset r rate 240 40
 exec_always --no-startup-id setxkbmap us -variant intl
-exec_always --no-startup-id sunshine
 exec_always --no-startup-id xset s off
 
 
@@ -177,6 +176,7 @@ bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Ctrl+v exec pavucontrol
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
